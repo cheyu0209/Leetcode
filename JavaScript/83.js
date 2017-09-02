@@ -11,32 +11,72 @@
  */
 var deleteDuplicates = function(head) {
 
-    if(head==null) {
+    /* 解題重點：連續重複的判斷 */
+
+    /* Solution 1 */    // 傳
+    /*
+    if(head == null) {
         return null;
-      }
+    }
 
     var current = head;
     var bool = true;
 
-    while(current.next != null){
-        bool =true;
-        if(current.val == current.next.val){
+    while(current.next != null) {
+        bool = true;
+        if(current.val === current.next.val){
             if(current.next.next != null){
-                if(current.next.val == current.next.next.val){
+                if(current.next.val === current.next.next.val) {
                     bool = false;
                 }
+                // 先傳 value 在傳 link ， value 才不會遺失
                 current.next.val = current.next.next.val;
                 current.next = current.next.next;
             }
-            else{
+            else {
                 current.next = null;
                 break;
             }
         }
-        if(bool){
+        if(bool) {
             current = current.next;
         }
      }
+    return head;
+    */
+
+    /* Solution 2 */
+    /*
+    if (head === null) {
+        return head;
+    }
+    for (let nd = head, nx = nd.next; nx !== null; ) {
+        if (nx.val === nd.val) {
+            nd.next = nd.next.next;
+            nx = nx.next;
+        } else {
+            nd = nd.next;
+            nx = nx.next;
+        }
+    }
+    return head;
+    */
+
+    /* Solution 3 */    // Better One
+    if(head == null ) return head;
+    if(head.next == null ) return head;
+
+    var cur = head;
+
+    while(cur.next != null) {
+        if(cur.val != cur.next.val){
+            cur = cur.next;
+        }
+        else {
+            // next.next 若為 null 則結束 while
+            cur.next = cur.next.next;
+        }
+    }
     return head;
 
 };
