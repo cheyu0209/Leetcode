@@ -11,7 +11,6 @@
  */
 var deleteDuplicates = function(head) {
 
-    if(head == null){return null}
     if(head==null) {
         return null;
       }
