@@ -12,7 +12,7 @@
  var tree2str = function(t) {
     var ans = "";
     if(t == null)
-      return "";
+       return "";
     ans += dfs(t);
     return ans.toString();
 };
