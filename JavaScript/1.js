@@ -7,7 +7,7 @@ var twoSum = function(nums, target) {
 
     var map=[];
     var tmp;
-
+ 
     /* 將 nums 與 map 的 index 與 value 相互對應 */
     for(i=0; i<nums.length;i++)
         map[ nums[i] ] = i;
