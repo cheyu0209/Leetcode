@@ -11,7 +11,7 @@
  */
 var deleteDuplicates = function(head) {
 
-    /* 解題重點：連續重複的判斷 */
+    /* 解題重點：對於連續重複數字的判斷 -> 保留 current 而從 next 與 next.next 下手 */
 
     /* Solution 1 */    // 傳
     /*
