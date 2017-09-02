@@ -22,3 +22,8 @@ var twoSum = function(nums, target) {
     }
 
 };
+
+
+
+// https://leetcode.com/problems/two-sum/description/
+// https://leetcode.com/submissions/detail/115932712/
