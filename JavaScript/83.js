@@ -12,8 +12,13 @@
 var deleteDuplicates = function(head) {
 
     if(head == null){return null}
+    if(head==null) {
+        return null;
+      }
+
     var current = head;
     var bool = true;
+
     while(current.next != null){
         bool =true;
         if(current.val == current.next.val){
