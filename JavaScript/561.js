@@ -13,7 +13,7 @@ var arrayPairSum = function(nums) {
 
     // 數值排序
     nums.sort( function(a, b) {return a - b;} );
-
+ 
     for(i=0; i<nums.length; i+=2) {
         sum += nums[i];
     }
