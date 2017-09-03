@@ -10,25 +10,25 @@
  * @return {string}
  */
  var tree2str = function(t) {
-    var ans = "";
-    if(t == null)
-       return "";
-    ans += dfs(t);
-    return ans.toString();
-};
 
-function dfs(t){
-    var part = t.val;
-    if(!t.left && t.right)
-      part += "()";
-    if(t.left)
-      part += '(' + dfs(t.left) + ')';
-    if(t.right)
-      part += '(' + dfs(t.right) + ')';
-    return part;
-};
+    if(!t)
+        return "";
+
+    var ans = t.val;
+    if(!t.left && t.right) {
+        ans += "()";
+    }
+    if(t.left) {
+        ans += "(" + tree2str(t.left) + ")";
+    }
+    if(t.right) {
+        ans += "(" + tree2str(t.right) + ")";
+    }
+    return ans.toString();
+
+}
 
 
 
 // https://leetcode.com/problems/construct-string-from-binary-tree/description/
-// https://leetcode.com/submissions/detail/116706993/
+// https://leetcode.com/submissions/detail/116870154/
