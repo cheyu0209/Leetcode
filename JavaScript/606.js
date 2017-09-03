@@ -15,6 +15,8 @@
         return "";
 
     var ans = t.val;
+
+    /* 有 right 但沒有 left 需輸入空白 */
     if(!t.left && t.right) {
         ans += "()";
     }
@@ -24,6 +26,7 @@
     if(t.right) {
         ans += "(" + tree2str(t.right) + ")";
     }
+    
     return ans.toString();
 
 }
