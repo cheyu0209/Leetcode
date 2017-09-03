@@ -3,17 +3,18 @@
  * @return {number}
  */
 var arrayPairSum = function(nums) {
-    var sum=0;
 
+    /* 字串排序 */
     /*
-    字串排序
     nums.sort();
     ex: 2, -7, -2, 6 -> -2, -7, 2, 6
     */
 
-    // 數值排序
+    /*數值排序 */
+    var sum=0;
+
     nums.sort( function(a, b) {return a - b;} );
- 
+
     for(i=0; i<nums.length; i+=2) {
         sum += nums[i];
     }
